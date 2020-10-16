@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <div id="dome1"></div>
+  <div id="dome2"></div>
+  <script src="./files/react.development.js"></script>
+  <script src="./files/react-dom.development.js"></script>
+  <script src="./files//babel.min.js"></script>
+  <script type="text/babel">
+    // 原生dom
+    /* const vDOM=React.createElement('h1',{
+      className:"title",
+      id:'title1'
+    },"哈哈")
+    react.render(vDOM,document.getElementById('root')) */
+
+    const title="杨显鹏"
+    const con="帅"
+    const tilte1="彭金利"
+    const vDOM1=<div className="sl">{tilte1}
+    <p>{con}</p> 
+    <h1 className={title} id="ppp">{title}
+      <p>{con}</p>
+      </h1> 
+    </div>
+      
+    ReactDOM.render(
+      vDOM1,
+      document.getElementById('dome2')
+    )
+    
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <!-- react -->
+  <script src="./files//react.development.js"></script>
+  <!-- react的DOM -->
+  <script src="./files//react-dom.development.js"></script>
+  <!-- 解析渲染es6 -->
+  <script src="./files//babel.min.js"></script>
+  <script type="text/babel">
+    //创建DOM
+    const vDOM=<li>哈哈哈</li>
+    //放到指定渲染
+    ReactDOM.render(
+      //容器
+      vDOM,
+      document.getElementById('root')
+    )
+  </script>
+</body>
+</html>
