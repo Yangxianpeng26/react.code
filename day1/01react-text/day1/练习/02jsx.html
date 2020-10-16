@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo1"></div>
+    <div id="demo3"></div>
+    <div id="demo2"></div>
+    <script src="../files//react.development.js"></script>
+    <script src="../files//react-dom.development.js"></script>
+    <!-- <script src="../files//babel.min.js"></script> -->
+    <script>
+      //原生
+      //创建虚拟DOM
+      const vDOM1 = React.createElement(
+        "h1",
+        { className: "title1", id: "ppp" },
+        "内容你好呀"
+      );
+      //渲染
+      ReactDOM.render(vDOM1, document.getElementById("demo1"));
+
+      //原生2
+      //创建一个虚拟Dom(标签，类型，内容，子元素)
+      //这样覆盖上面的vDOM1，只显示vDOM2
+      const vDOM2 = React.createElement(
+        "div",
+        { className: "style" },
+        "helloReact",
+        vDOM1
+      );
+      ReactDOM.render(vDOM2, document.getElementById("demo1"));
+    </script>
+    <script src="../files//babel.min.js"></script>
+    <script type="text/babel">
+      //jsx语法
+      //以<开头，如果是html同名元素，会解析html元素，如果不是就以组件来解析
+      //在<代内，如果是{开头里面的代码会被当成js代码解析
+      //作用：简化创建虚拟DOM对象
+      // 最终的jsx的语法会被解析成React.createElement语法
+      const content = "helloReact";
+      const con = "helloWordl";
+      //创建一个虚拟DOM对象
+      const vDOM3 = (
+        <div className="title">
+          {content}
+          <p>{con}</p>
+        </div>
+      );
+      ReactDOM.render(vDOM3, document.getElementById("demo3"));
+    </script>
+  </body>
+</html>

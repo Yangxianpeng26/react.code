@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="root1"></div>
+    <script src="../files/react.development.js"></script>
+    <script src="../files/react-dom.development.js"></script>
+    <script src="../files//babel.min.js"></script>
+    <script type="text/babel">
+      const content = "大傻瓜";
+      //工厂模式(简单定义组件)
+      /* 
+      
+       定义组件的注意事项：
+          1. 组件名首字母必须大写
+            jsx语法：如果标签名是小写，会当做html元素解析，解析不了就会报错
+                    如果标签名是大写，会当做组件解析
+          2. 组件要渲染虚拟DOM对象，必须有一个根标签
+          3. 使用标签必须是闭合标签
+            单标签带结束符
+            双标签
+              看标签内部是否有内容，如果有就是双标签，没有就是单标签
+      */
+      function Mycomponent1() {
+        //返回是渲染内容
+        return (
+          <div>
+            你好呀，傻子
+            <p>{content}</p>
+            <input type="text" />
+          </div>
+        );
+      }
+      ReactDOM.render(<Mycomponent1 />, document.getElementById("root"));
+
+      //ES6语法
+      class Mycomponent2 extends React.Component {
+        //渲染 render是一个函数，所以return出去
+        render() {
+          return <div>你好</div>;
+        }
+      }
+      ReactDOM.render(<Mycomponent2 />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

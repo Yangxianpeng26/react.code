@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <!-- 向外暴露出去React -->
+  <script src="../files//react.development.js"></script>
+  <!-- 向外暴露出去ReactDOM -->
+  <script src="../files//react-dom.development.js"></script>
+  <!-- 引入babel react中jsx语法-->
+  <script src="../files//babel.min.js"></script>
+  <!-- type使用babel 让babel有效果 -->
+  <script type="text/babel">
+    //创建一个虚拟DOM
+    const vDOM=<p>杨显鹏</p>
+    //将虚拟DOM放到指定的容器中渲染
+    ReactDOM.render(
+      vDOM,
+      document.getElementById('root')
+    )
+  </script>
+</body>
+</html>

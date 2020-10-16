@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="root1"></div>
+    <script src="../files//react.development.js"></script>
+    <script src="../files//react-dom.development.js"></script>
+    <script src="../files//babel.min.js"></script>
+    <script type="text/babel">
+      //工厂模式
+      const contnet = "你好呀";
+      function Mypromise1() {
+        return (
+          <div>
+            <span>工厂模式</span>
+            <span>{contnet}</span>
+            <input type="text" />
+          </div>
+        );
+      }
+      ReactDOM.render(<Mypromise1 />, document.getElementById("root"));
+
+      //se6
+      class Mypromise2 extends React.Component {
+        //一个生命函数有返回
+        render() {
+          return (
+            <div>
+              <span>工厂模式</span>
+              <span>{contnet}</span>
+              <input type="text" />
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(<Mypromise2 />, document.getElementById("root1"));
+    </script>
+  </body>
+</html>
