@@ -25,7 +25,7 @@ export default class App extends Component {
     });
   };
   //更新数据
-  updataTodo = (id) => {
+  updateTodo = (id) => {
     //先获取所有
     const { todos } = this.state;
     //不建议改变原来数据，建议产生一份新数据
@@ -45,16 +45,6 @@ export default class App extends Component {
     });
     console.log(todos);
   };
-  //删除
-  delTodo = (id) => {
-    //先获取所有
-    const { todos } = this.state;
-    this.setState({
-      //todo的id等不等于，返回true是保留,false过滤
-      todos: todos.filter((todo) => todo.id !== id),
-    });
-  };
-
   render() {
     //获取到todos数据
     const { todos } = this.state;
@@ -69,11 +59,7 @@ export default class App extends Component {
     return (
       <div className="container">
         <Header addTodo={this.addTodo} />
-        <List
-          todos={todos}
-          updataTodo={this.updataTodo}
-          delTodo={this.delTodo}
-        />
+        <List todos={todos} updateTodo={this.updateTodo} />
         <Footer todol={todol} isCheckednum={isCheckednum} />
       </div>
     );
