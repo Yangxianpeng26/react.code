@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 export default class Child extends Component {
+  //限制类型的
   static propTypes = {
     //名字指定字符串是必须的
     name: PropTypes.string.isRequired,

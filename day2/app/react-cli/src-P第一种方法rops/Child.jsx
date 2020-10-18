@@ -1,5 +1,5 @@
 import React from "react";
-//props
+//props限制类型的主要传参
 import PropTypes from "prop-types";
 
 class Child extends React.Component {

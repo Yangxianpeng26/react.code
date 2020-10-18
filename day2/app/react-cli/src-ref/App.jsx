@@ -2,10 +2,19 @@ import React, { Component } from "react";
 //引入子组件
 import Child from "./Child";
 
+
+
 //extends继承Component
 export default class App extends Component {
+  //ref可以获取Dom对象，也可以获取组件实例化对象
+    // 分有stringRef(弃用) createRef funcRef
+
+
+
+
   //Es6语法
   constructor(props) {
+    //props能在constructor使用this的方法                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
     // 不写pusper那么constructor里面this就没有用
     //继承父级的一些东西,传入props
     //写了constructor也就一定写super
@@ -17,6 +26,7 @@ export default class App extends Component {
   //原型上的直接方法
   test() {}
 
+  //实例对象上的方法
   createRef = React.createRef();
   childRef = React.createRef();
   //普遍函数也是实例对象直接方法
