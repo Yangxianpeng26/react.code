@@ -1,39 +1,34 @@
-//引入React
 import React, { Component } from "react";
-//声明接收
 import PropTypes from "prop-types";
+//引入样式文件
 
-export default class List extends Component {
-  //接收数据,声明接收，限制类型值
+export default class Footer extends Component {
   static propTypes = {
     todol: PropTypes.number.isRequired,
     isCheckednum: PropTypes.number.isRequired,
     handleCheckAll: PropTypes.func.isRequired,
     batchDel: PropTypes.func.isRequired,
   };
+
   check = (event) => {
-    //checked选中和未选中
     const checked = event.target.checked;
-    //直接使用
+    //直接使用接收回来的数据
     this.props.handleCheckAll(checked);
   };
 
   render() {
-    //获取数据
     const { todol, isCheckednum, batchDel } = this.props;
-    //全部的长度是否等于完成的已完成数量，并且全部的长度大于0
-    const checkeAll = todol == isCheckednum && todol > 0;
+    const isCheckAll = todol === isCheckednum && todol > 0;
     return (
       <div>
         <input
-          type="checkbox"
           className="checkbox"
-          /*checked 单选框或多选框 默认被选中 */
-          checked={checkeAll}
+          type="checkbox"
+          checked={isCheckAll}
           onChange={this.check}
         />
         <span>
-          已完成 {isCheckednum}/ 全部 {todol}
+          已完成 {isCheckednum}/ 全部{todol}
         </span>
         <button
           onClick={batchDel}
@@ -43,7 +38,7 @@ export default class List extends Component {
             display: isCheckednum ? "block" : "none",
           }}
         >
-          删除
+          批量删除
         </button>
       </div>
     );
