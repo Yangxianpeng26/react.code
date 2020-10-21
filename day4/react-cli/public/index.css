@@ -1,24 +1,31 @@
-.album {
-  min-height: 50rem; /* Can be removed; just added for demo purposes */
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: #f7f7f7;
+.reply {
+  margin-top: 0px;
 }
 
-.card {
-  float: left;
-  width: 33.333%;
-  padding: .75rem;
-  margin-bottom: 2rem;
-  border: 1px solid #efefef;
+li {
+  transition: .5s;
+  overflow: hidden;
+}
+
+.handle {
+  width: 40px;
+  border: 1px solid #ccc;
+  background: #fff;
+  position: absolute;
+  right: 10px;
+  top: 1px;
   text-align: center;
 }
 
-.card > img {
-  margin-bottom: .75rem;
-  border-radius: 100px;
+.handle a {
+  display: block;
+  text-decoration: none;
 }
 
-.card-text {
-  font-size: 85%;
+.list-group-item .centence {
+  padding: 0px 50px;
+}
+
+.user {
+  font-size: 22px;
 }
