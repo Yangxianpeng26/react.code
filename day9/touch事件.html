@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 元素上触摸开始时触发相当于点击一下
+      // document.addEventListener("touchstart", function (e) {
+      //   console.log("touchstart", e);
+      // });
+      //元素上触摸移动时触发 移动
+      // document.addEventListener("touchmove", function (e) {
+      //   console.log("touchmove", e);
+      // });
+      //手指从元素上离开时触发  抬起
+      document.addEventListener("touchend", function (e) {
+        console.log("touchend", e);
+      });
+    </script>
+  </body>
+</html>

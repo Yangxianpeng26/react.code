@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+        overflow-x: hidden;
+      }
+      .box {
+        width: 300%;
+        height: 200px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      11111111111111111111111111111111111111111111222222222222222222222222222222222222222
+    </div>
+    <script>
+      //获取box
+      const box = document.querySelector(".box");
+
+      // 手触碰的起始位置
+      let startX = 0;
+      //box元素位移的起始位置
+      let tragetX = 0;
+      //动力的速度
+      let speed = 10;
+      //，给事件
+      box.addEventListener("touchstart", function (e) {
+        startX = e.changedTouches[0].clientX;
+      });
+      
+      box.addEventListener("touchmove", function (e) {
+        //i
+        endX = e.changedTouches[0].clientX;
+
+        const distance = endX - startX;
+        if (distance > 0) {
+          tragetX += speed;
+        } else {
+          tragetX -= speed;
+        }
+
+        box.style.transform = `translateX(${tragetX}px)`;
+
+        startX = endX;
+      });
+    </script>
+  </body>
+</html>
